@@ -1,0 +1,408 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --purple-dark: #301934;
+  --purple-light: #51245c;
+  --text-color: #ffffff;
+  --background-dark: #1a1a1a;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 37px; /* Reduce el padding vertical */
+  background: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+  position: fixed; /* Fija el navbar al inicio */
+  top: 0; /* Anclado arriba */
+  width: 100%; /* Abarca todo el ancho de la pantalla */
+  z-index: 10; /* Mantiene el navbar por encima */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Añade sombra */
+}
+
+.logo img {
+  width: 120px; /* Tamaño ajustado del logo */
+  transition: transform 0.3s ease; /* Animación al interactuar */
+}
+
+.logo img:hover {
+  transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px; /* Espaciado entre los elementos del menú */
+}
+
+.nav-links li {
+  position: relative; /* Útil para animaciones o submenús */
+}
+
+.nav-links li a {
+  text-decoration: none; /* Quita subrayado */
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease; /* Animación de hover */
+}
+
+.nav-links li a:hover {
+  color: var(--purple); /* Usa el color principal */
+  transform: scale(1.1); /* Aumenta el tamaño ligeramente */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 15px; /* Más espaciado entre los botones */
+}
+
+.auth-buttons .login-button,
+.auth-buttons .signup-button {
+  padding: 8px 15px; /* Botones más compactos */
+  font-size: 0.8rem; /* Fuente más pequeña */
+}
+
+.login-button,
+.signup-button {
+  text-decoration: none; /* Quita subrayado */
+  /* Botones más cómodos */
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+.login-button {
+  background: none; /* Fondo transparente */
+  border: 2px solid #fff; /* Borde blanco */
+  color: #fff;
+}
+
+.signup-button {
+  background: var(--purple); /* Color de fondo */
+  color: #fff;
+}
+
+.login-button:hover {
+  background: var(--purple); /* Cambia a color principal al hover */
+  color: #fff;
+}
+
+.signup-button:hover {
+  background: var(--pink); /* Cambia a color rosa al hover */
+  color: #fff;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 15px 30px; /* Reduce el padding en pantallas más pequeñas */
+  }
+
+  .nav-links {
+    display: none; /* Oculta las opciones de menú en dispositivos pequeños */
+  }
+
+  .hamburger {
+    display: flex; /* Muestra el menú hamburguesa */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+  }
+
+  .auth-buttons {
+    display: none; /* Oculta los botones adicionales en dispositivos pequeños */
+  }
+}
+
+/* Menú desplegable para dispositivos móviles */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+  position: absolute;
+  top: 70px; /* Justo debajo del navbar */
+  right: 0;
+  width: 100%;
+  padding: 20px;
+  gap: 10px;
+}
+
+.nav-links.active li a {
+  font-size: 1.2rem; /* Tamaño mayor para facilitar clics */
+}
+
+/* Hero Content */
+/* Hero Content */
+.hero-content {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Título principal */
+.welcome-title {
+  font-family: "Anton", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 10px;
+}
+
+/* Subtítulo URZA */
+.brand-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: var(--purple); /* Usa un color llamativo */
+}
+
+/* Descripción */
+.description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+/* Botones */
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.button {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.music-button {
+  background: var(--purple);
+  color: #fff;
+}
+
+.music-button:hover {
+  background: var(--pink);
+  transform: scale(1.1);
+}
+
+.courses-button {
+  background: none;
+  border: 2px solid var(--purple);
+  color: var(--purple);
+}
+
+.courses-button:hover {
+  background: var(--purple);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Header Hero Section */
+header.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), var(--background-dark)),
+    url("imgs/pexels-wendywei-1190299.jpg") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Tracks Section */
+section#tracks {
+  padding: 50px 20px;
+  background: linear-gradient(
+    to bottom,
+    #1a1a1a,
+    /* Fondo de Tracks */ #021120 /* Fondo de Cursos */
+  );
+  color: var(--text-color);
+  text-align: center;
+}
+
+.tracks-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.release img {
+  width: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.release img:hover {
+  transform: scale(1.1);
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Courses Section */
+/* Cursos */
+section#courses {
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #021120, #000000);
+  color: var(--text-color);
+  text-align: center;
+  margin-top: -230px; /* Reduce el espacio entre la wave y los cursos */
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 30px;
+}
+
+.plan {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+}
+
+.plan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.plan h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.plan p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.plan ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.button {
+  background: linear-gradient(to right, #9223ff, #f62de8);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: linear-gradient(to right, #f62de8, #9223ff);
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: var(--purple-dark);
+  text-align: center;
+  padding: 20px;
+}
+
+.social-links a {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--purple-light);
+}
