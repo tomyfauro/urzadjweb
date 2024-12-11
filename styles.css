@@ -1,9 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+}
+/* Cambiar el color de selección de texto */
+::selection {
+  background-color: rgba(56, 5, 56, 0.868); /* Fondo violeta */
+  color: #fff; /* Texto blanco */
+}
+
+/* Cambiar para navegadores Webkit (como Chrome y Safari) */
+::-moz-selection {
+  background-color: rgba(56, 5, 56, 0.868); /* Fondo violeta */
+  color: #fff; /* Texto blanco */
 }
 
 :root {
@@ -24,134 +39,132 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1px 37px; /* Reduce el padding vertical */
-  background: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
-  position: fixed; /* Fija el navbar al inicio */
-  top: 0; /* Anclado arriba */
-  width: 100%; /* Abarca todo el ancho de la pantalla */
-  z-index: 10; /* Mantiene el navbar por encima */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Añade sombra */
+  padding: 1px 30px; /* Ajusta el padding para mayor espacio */
+  background: rgba(0, 0, 0, 0.85); /* Fondo ligeramente más oscuro */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra más definida */
 }
 
 .logo img {
-  width: 120px; /* Tamaño ajustado del logo */
-  transition: transform 0.3s ease; /* Animación al interactuar */
+  width: 100px; /* Ajusta el tamaño del logo */
+  transition: transform 0.3s ease;
 }
 
 .logo img:hover {
-  transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+  transform: scale(1.1); /* Efecto de zoom */
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px; /* Espaciado entre los elementos del menú */
+  gap: 30px; /* Mayor espaciado entre los links */
 }
 
-.nav-links li {
-  position: relative; /* Útil para animaciones o submenús */
-}
-
+/* Enlaces del navbar */
 .nav-links li a {
-  text-decoration: none; /* Quita subrayado */
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.3s ease; /* Animación de hover */
+  text-decoration: none; /* Sin subrayado */
+  color: #fff; /* Texto blanco */
+  font-size: 1rem; /* Tamaño del texto */
+  font-weight: 600; /* Peso del texto */
+  transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
 }
 
+/* Estilo al pasar el mouse */
 .nav-links li a:hover {
-  color: var(--purple); /* Usa el color principal */
-  transform: scale(1.1); /* Aumenta el tamaño ligeramente */
+  background-color: rgba(56, 5, 56, 0.868); /* Fondo morado */
+  color: #fff; /* Texto blanco */
+  padding: 5px 10px; /* Añade un poco de padding */
+  border-radius: 10px; /* Bordes redondeados */
+  transition: all 0.6s ease-in-out; /* Animación suave */
 }
 
+/* Botones de autenticación */
 .auth-buttons {
   display: flex;
-  gap: 15px; /* Más espaciado entre los botones */
+  gap: 20px; /* Espaciado entre los botones */
 }
 
 .auth-buttons .login-button,
 .auth-buttons .signup-button {
-  padding: 8px 15px; /* Botones más compactos */
-  font-size: 0.8rem; /* Fuente más pequeña */
-}
-
-.login-button,
-.signup-button {
-  text-decoration: none; /* Quita subrayado */
-  /* Botones más cómodos */
-  border-radius: 5px;
+  text-decoration: none; /* Elimina subrayado */
+  background-color: #000; /* Fondo oscuro por defecto */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 0.9rem;
   font-weight: bold;
-  transition: all 0.3s ease; /* Transición suave */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: all 0.3s ease-in-out; /* Transición suave */
+  display: inline-block;
+  color: #fff; /* Texto blanco por defecto */
 }
 
+/* Botón de inicio de sesión */
 .login-button {
-  background: none; /* Fondo transparente */
-  border: 2px solid #fff; /* Borde blanco */
-  color: #fff;
-}
-
-.signup-button {
-  background: var(--purple); /* Color de fondo */
-  color: #fff;
+  border: 2px solid var(--purple); /* Borde morado */
+  color: #fff; /* Texto blanco por defecto */
 }
 
 .login-button:hover {
-  background: var(--purple); /* Cambia a color principal al hover */
-  color: #fff;
+  background-color: rgba(56, 5, 56, 0.868); /* Fondo morado al pasar el mouse */
+  color: #fff; /* Texto blanco */
+}
+
+/* Botón de registro */
+.signup-button {
+  border: 2px solid var(--purple); /* Borde morado */
+  background-color: #000; /* Fondo oscuro por defecto */
+  color: #fff; /* Texto blanco */
 }
 
 .signup-button:hover {
-  background: var(--pink); /* Cambia a color rosa al hover */
-  color: #fff;
+  background-color: rgba(56, 5, 56, 0.868); /* Fondo morado al pasar el mouse */
+  color: #fff; /* Texto blanco */
 }
 
 /* Responsividad */
 @media screen and (max-width: 768px) {
   .navbar {
-    padding: 15px 30px; /* Reduce el padding en pantallas más pequeñas */
+    padding: 10px 20px; /* Reduce el padding en móviles */
   }
 
   .nav-links {
-    display: none; /* Oculta las opciones de menú en dispositivos pequeños */
+    display: none;
   }
 
   .hamburger {
-    display: flex; /* Muestra el menú hamburguesa */
+    display: none;
     flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 20px;
+    gap: 5px;
     cursor: pointer;
   }
 
   .hamburger span {
-    display: block;
+    width: 25px;
     height: 3px;
     background: #fff;
-    border-radius: 2px;
   }
 
   .auth-buttons {
-    display: none; /* Oculta los botones adicionales en dispositivos pequeños */
+    gap: 15px; /* Reduce espacio en móviles */
   }
-}
 
-/* Menú desplegable para dispositivos móviles */
-.nav-links.active {
-  display: flex;
-  flex-direction: column;
-  background: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
-  position: absolute;
-  top: 70px; /* Justo debajo del navbar */
-  right: 0;
-  width: 100%;
-  padding: 20px;
-  gap: 10px;
-}
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    border-radius: 8px;
+  }
 
-.nav-links.active li a {
-  font-size: 1.2rem; /* Tamaño mayor para facilitar clics */
+  .nav-links.active li a {
+    font-size: 1.1rem; /* Tamaño más grande en menú desplegable */
+  }
 }
 
 /* Hero Content */
@@ -191,22 +204,25 @@ body {
   color: #ccc;
 }
 
-/* Botones */
 .cta-buttons {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   justify-content: center;
+  margin-top: 30px; /* Márgenes para separar los botones del texto superior */
+  margin-bottom: 40px; /* Aumenta el margen inferior para separar los botones del siguiente contenido */
+  width: 100%; /* Esto puede ayudar a asegurar que el margen se aplique de manera efectiva */
+  padding: 40px 10px; /* Aumenta el padding para crear más espacio alrededor de los botones */
+  border-radius: 10px; /* Si quieres bordes redondeados */
 }
-
 .button {
   text-decoration: none;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 12px 24px; /* Aumenta el padding de los botones para que se vean más grandes */
   border-radius: 5px;
   font-size: 1rem;
   transition: all 0.3s ease-in-out;
+  margin-bottom: 10px; /* Esto asegura que los botones también tengan margen entre ellos */
 }
-
 .music-button {
   background: var(--purple);
   color: #fff;
@@ -253,28 +269,6 @@ header.hero {
   width: 25px;
   height: 3px;
   background: #fff;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 70px;
-    right: 50px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 5px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
 }
 
 /* Tracks Section */
@@ -341,7 +335,7 @@ section#courses {
 .plan {
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -405,4 +399,304 @@ footer {
 
 .social-links a:hover {
   color: var(--purple-light);
+}
+
+/* Sección de recomendaciones */
+#recommendations {
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #000000, #1a1a1a);
+  color: var(--text-color);
+  text-align: center;
+}
+
+#recommendations h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--purple-light);
+  text-transform: uppercase;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.recommendation {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+}
+
+.recommendation img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid var(--purple-light);
+}
+
+.recommendation p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.recommendation span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px; /* Tamaño del círculo */
+  height: 80px; /* Tamaño del círculo */
+  background: var(--purple-light); /* Fondo morado */
+  color: #fff; /* Texto blanco */
+  font-size: 0.9rem; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  border-radius: 80%; /* Hace el círculo */
+  margin: 0 auto 15px; /* Centra y añade espacio inferior */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra del círculo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.recommendation span:hover {
+  transform: scale(1.1); /* Agranda ligeramente al pasar el mouse */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
+}
+
+/* Scroll top boton  */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--purple);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100px); /* Botón oculto inicialmente */
+}
+
+.scroll-to-top i {
+  font-size: 1.5rem;
+}
+
+.scroll-to-top:hover {
+  background: var(--pink); /* Cambia de color al pasar el mouse */
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Botón visible al hacer scroll */
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+  .logo img {
+    width: 80px; /* más pequeño en móvil */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(100% - 40px); /* ocupa ancho disponible */
+    box-sizing: border-box;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .auth-buttons {
+    display: none; /* Si no necesitas botones separados en móvil */
+  }
+}
+/* Hamburguesa por defecto oculta en pantallas grandes */
+.hamburger {
+  display: none;
+}
+
+/* En pantallas pequeñas, mostramos la hamburguesa */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+  }
+
+  /* Estado normal del menú (oculto) */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: calc(100% - 40px);
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  /* Menú activo (visible) */
+  .nav-links.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-links li a:hover {
+    background-color: var(--purple-light);
+  }
+
+  /* Opcional: animación para la hamburguesa al abrir/cerrar (cambiar ícono) */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    background: #fff;
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+    background: #fff;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .welcome-title {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+
+  .description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tracks-grid {
+    flex-direction: column; /* Poner uno debajo de otro en pantallas pequeñas */
+    gap: 20px;
+    align-items: center;
+  }
+
+  .release img {
+    width: 80%; /* Menos ancho en móvil */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .plans-grid {
+    grid-template-columns: 1fr; /* una columna */
+    gap: 30px;
+  }
+
+  .plan {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .plan h3 {
+    font-size: 1.3rem;
+  }
+
+  .plan p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .recommendation {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .recommendation p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .social-links a {
+    font-size: 1.2rem;
+    margin: 0 5px;
+  }
 }
