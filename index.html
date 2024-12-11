@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>URZA DJ</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
@@ -24,7 +25,7 @@
       <nav class="navbar">
         <div class="logo">
           <img
-            src="imgs/urza logo png.png" alt="URZA DJ Logo"
+            src="/imgs/urza logo png.png"
             style="width: 150px; height: 150px"
             alt="URZA DJ Logo"
           />
@@ -38,23 +39,23 @@
           <a href="#" class="login-button">Iniciar Sesión</a>
           <a href="#" class="signup-button">Regístrate</a>
         </div>
+
+        <!-- Menú hamburguesa dentro del nav -->
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </nav>
-          <!-- Menú hamburguesa (para dispositivos móviles) -->
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
-  <div class="hero-content">
-    <h1 class="welcome-title">¡BIENVENIDOS!</h1>
-    <p class="description">Electrónica que conecta contigo</p>
-    <div class="cta-buttons">
-      <a href="#tracks" class="button music-button">MÚSICA</a>
-      <a href="#courses" class="button courses-button">CURSOS</a>
-    </div>
-  </div>
-  
+
+      <div class="hero-content">
+        <h1 class="welcome-title">¡BIENVENIDOS!</h1>
+        <p class="description">Electrónica que conecta contigo</p>
+        <div class="cta-buttons">
+          <a href="#tracks" class="button music-button">MÚSICA</a>
+          <a href="#courses" class="button courses-button">CURSOS</a>
+        </div>
+      </div>
     </header>
 
     <!-- Sección Tracks -->
@@ -96,6 +97,11 @@
       <h2>Conocé los Cursos</h2>
       <div class="plans-grid">
         <div class="plan">
+          <img
+            src="/imgs/Logo-cuenca-Comun-sin-fondo-1-1300x1300.png"
+            style="width: 200px; height: 200px"
+            alt=""
+          />
           <h3>Curso Básico</h3>
           <p>$47 USD</p>
           <ul>
@@ -106,6 +112,11 @@
           <a href="#" class="button">Comprar</a>
         </div>
         <div class="plan">
+          <img
+            src="/imgs/Logo-cuenca-Comun-sin-fondo-1-1300x1300.png"
+            style="width: 200px; height: 200px"
+            alt=""
+          />
           <h3>Curso Pro + Música</h3>
           <p>$97 USD</p>
           <ul>
@@ -116,6 +127,11 @@
           <a href="#" class="button">Comprar</a>
         </div>
         <div class="plan">
+          <img
+            src="/imgs/Logo-cuenca-Comun-sin-fondo-1-1300x1300.png"
+            style="width: 200px; height: 200px"
+            alt=""
+          />
           <h3>Curso Premium</h3>
           <p>$197 USD</p>
           <ul>
@@ -124,6 +140,34 @@
             <li>Acceso a recursos exclusivos</li>
           </ul>
           <a href="#" class="button">Comprar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Recommendations -->
+    <section id="recommendations">
+      <h2>Recomendaciones</h2>
+      <div class="recommendations-grid">
+        <div class="recommendation">
+          <span>- Alvaro</span>
+          <p>
+            "Los cursos de URZA DJ me ayudaron a crecer como DJ profesional.
+            ¡Recomiendo muchísimo!"
+          </p>
+        </div>
+        <div class="recommendation">
+          <span>- Micaela</span>
+          <p>
+            "Acceso a herramientas increíbles y una comunidad que siempre apoya.
+            Es lo mejor."
+          </p>
+        </div>
+        <div class="recommendation">
+          <span>- Martin</span>
+          <p>
+            "He aprendido más en un mes aquí que en años por mi cuenta.
+            Increíble experiencia."
+          </p>
         </div>
       </div>
     </section>
@@ -140,6 +184,13 @@
       </div>
       <p>© 2024 URZA DJ. Todos los derechos reservados.</p>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="script.js"></script>
+    <div id="scroll-to-top" class="scroll-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
   </body>
 </html>
